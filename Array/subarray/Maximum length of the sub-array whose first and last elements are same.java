@@ -93,3 +93,50 @@ int main()
 
     startindex(arr , n);
 }
+
+
+
+
+
+Java 
+
+
+
+import java.util.Scanner;
+
+class Main
+{
+    static int splitarray(char [] arr , int n)
+    {   int totalsum =Integer.MIN_VALUE , j;
+        for(int i=0; i<n; i++)
+        {
+            for( j=n-1; j>i; j--)
+        {
+           
+
+            if(arr[i] == arr[j])
+            {   totalsum = java.lang.Math.max(totalsum, j-i+1);
+                break;
+            }
+           
+        }
+        
+    }
+        return totalsum;
+    }
+    public static void main(String [] args)
+    {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        char [] arr = new char[n];
+
+        for(int i=0; i<n; i++)
+        {
+            arr[i] = sc.next().charAt(0);
+        }
+
+        System.out.println(splitarray(arr, n));
+    }
+}
